@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies/Features/Widgets/Icons_WatchList.dart';
 
 import '../../Model/Similar/Similar.dart';
+import '../../Model/TopSide/Results.dart';
 
 class Smilarwidget extends StatelessWidget {
-  Rsimilar rated;
+  Results rated;
 
   Smilarwidget(this.rated);
 
@@ -20,12 +22,13 @@ class Smilarwidget extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(""), fit: BoxFit.cover)),
+                      image: NetworkImage(rated.posterPath??""), fit: BoxFit.cover)),
             ),
           ),
-          const Icon(
-            Icons.add,
-          ),
+          Positioned(
+            top: -30,
+              left: -5,
+              child: IconWathcList(results: rated,)),
           Positioned(
             top: 110,
             child: Container(

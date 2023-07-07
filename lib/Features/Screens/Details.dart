@@ -146,8 +146,8 @@ class Details extends StatelessWidget {
                                   scrollDirection: Axis.horizontal,
                                   itemCount: snapshot.data?.results?.length,
                                   itemBuilder: (context, index) {
-                                    List<Rsimilar> L = snapshot.data?.results ?? [];
-                                    Rsimilar res = L[index];
+                                    List<Results> L = snapshot.data?.results ?? [];
+                                    Results res = L[index];
 
                                     return Card(
                                         color: Colors.grey,
