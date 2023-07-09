@@ -39,7 +39,7 @@ class Results {
     originalTitle = json['original_title'];
     overview = json['overview'];
    // popularity = json['popularity'];
-    posterPath ="https://image.tmdb.org/t/p/original"+   json['poster_path'];
+    posterPath ="https://image.tmdb.org/t/p/original"+ json['poster_path'];
     releaseDate = json['release_date'];
     title = json['title'];
     video = json['video'];
@@ -58,7 +58,7 @@ class Results {
   String? releaseDate;
   String? title;
   bool? video;
- dynamic? voteAverage;
+ dynamic voteAverage;
   int? voteCount;
 
   Map<String, dynamic> toJson() {

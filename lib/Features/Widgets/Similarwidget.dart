@@ -22,7 +22,7 @@ class Smilarwidget extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(rated.posterPath??""), fit: BoxFit.cover)),
+                      image: NetworkImage(rated.backdropPath??""), fit: BoxFit.cover)),
             ),
           ),
           Positioned(
