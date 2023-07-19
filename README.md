@@ -1,4 +1,4 @@
-# Chat app
+# FreeVee app
 
  **Flutter project.**
 
