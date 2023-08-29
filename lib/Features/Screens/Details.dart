@@ -121,54 +121,7 @@ class Details extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  padding: REdgeInsets.only(left: 10),
-                  margin: REdgeInsets.symmetric(vertical: 10),
-                  height: 170,
-                  color: const Color(0xff707070).withOpacity(0.56),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("More Like This",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18.sp,color: Colors.white),),
-                      FutureBuilder<Similar>(
-                          future: ApiManager.getSimilar(args.id!),
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState == ConnectionState.waiting) {
-                              return const Center(child: CircularProgressIndicator());
-                            } else if (snapshot.hasError) {
-                              return Text("${snapshot.error.toString()}dsasdas");
-                            }
 
-                            return Expanded(
-                              child: Container(
-                                margin: REdgeInsets.only(bottom: 10),
-                                child: ListView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: snapshot.data?.results?.length,
-                                  itemBuilder: (context, index) {
-                                    List<Results> L = snapshot.data?.results ?? [];
-                                    Results res = L[index];
-
-                                    return Card(
-                                        color: Colors.grey,
-                                        elevation: 15,
-                                        // color: Colors.blue,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(32.r)
-                                        ),
-                                        child: Smilarwidget(res));
-
-
-                                  },
-                                ),
-                              ),
-                            );
-
-                          }),
-
-                    ],
-                  ),
-                ),
 
               ],
             );
